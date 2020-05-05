@@ -15,39 +15,44 @@
     Models will be:
     User, Pattern, Comment
 
+
     User attributes:
-        user_name
+        username
         email
-        password (with bcrypt will be password_digest in db)
+        password_digest 
 
     User associations:
         has_secure_password
         has_many :patterns
-        has_many :comments, through: :patterns ???
+        has_many :comments
+        has_many :commented_patterns, through: :comments, source: :pattern
 
 
     Pattern attributes:
         pattern_name
-        gauge
-        difficulty_level
-        instructions
+        gauge :integer
+        level :integer
+        instructions :text
         notes
+
         user_id
 
     Pattern associations:
         belongs_to :user
-        has_many :comments, through: :users ???
+        has_many :comments
+        has_many :users, through: :comments
 
 
     Comment attributes:
+        rating :integer
+        content :text
+        
         user_id
         pattern_id 
-        date 
-        content
 
     Comment associations:
-        belongs_to :pattern
         belongs_to :user
+        belongs_to :pattern
 
 #MVP
     *see spec.md file for checklist*
