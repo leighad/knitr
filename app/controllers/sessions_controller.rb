@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
 
-    def home
+    # def home
+    # end
 
-    end
+    # def new
+    # end
 
     def destroy
         session.clear 
