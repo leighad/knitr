@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   root 'sessions#home'
-  
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   # use this if you want to keep URL as '/signup' upon re-render after user fails to signup
   
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
+  delete '/logout' => 'sessions#destroy'
+
   resources :comments
   resources :patterns
   resources :users
