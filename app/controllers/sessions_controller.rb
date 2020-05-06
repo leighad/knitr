@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        # session.clear 
+        session.clear 
+        # session.delete :user_id 
+        redirect_to '/'
     end
 end
