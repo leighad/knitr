@@ -1,5 +1,7 @@
 <h1>Log In Here:</h1>
 
+<%= flash[:message] if flash[:message] %><hr>
+
 <%= form_for :user do |f| %>
 
     <%= f.label :email %>:&nbsp;&nbsp;&emsp;
