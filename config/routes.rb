@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
-  # post '/signup' => 'users#create'
+  post '/signup' => 'users#create'
   # use this if you want to keep URL as '/signup' upon re-render after user fails to signup
   
   resources :comments
