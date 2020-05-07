@@ -1,2 +1,29 @@
 <h1>Create A Pattern Here:</h1>
 <hr>
+
+<%= form_for(@pattern) do |f| %>
+    <%= f.label :pattern_name %>:&nbsp;
+    <%= f.text_field :pattern_name %><br><br>
+
+    <%= f.label :level %>:&nbsp;
+    <%= f.number_field :level, :in => 1..5, :step => 1 %><br><br>
+
+    <%= f.label :gauge %>:&nbsp;
+    <%= f.text_field :gauge %><br><br>
+
+    <%= f.label :instructions %>:<br>
+    <%= f.text_area :instructions %><br><br>
+
+    <%= f.label :notes %>:&nbsp;
+    <%= f.text_field :notes %><br><br>
+
+    <%= f.submit "Create Pattern" %>
+
+<% end %>
+
+    <%# t.string "pattern_name"
+    t.integer "gauge"
+    t.integer "level"
+    t.text "instructions"
+    t.string "notes" 
+    ***need to change column type for gauge to string%>
