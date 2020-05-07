@@ -18,6 +18,10 @@ class PatternsController < ApplicationController
         set_pattern
     end
 
+    def index
+        @patterns = Pattern.all 
+    end
+
     private
 
     def pattern_params

@@ -1,2 +1,8 @@
 <h2><%= @pattern.pattern_name.capitalize %></h2>
 <hr>
+
+    <p><strong>Difficulty Level: </strong><%= @pattern.level %></p>
+    <p><strong>Gauge: </strong><%= @pattern.gauge %></p>
+    <p><strong>Instructions: </strong><%= @pattern.instructions %></p>
+    <p><strong>Notes: </strong><%= @pattern.notes %></p>
+    <p><strong>Created by: </strong><%= @pattern.user.username %></p>
