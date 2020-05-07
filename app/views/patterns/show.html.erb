@@ -5,4 +5,6 @@
     <p><strong>Gauge: </strong><%= @pattern.gauge %></p>
     <p><strong>Instructions: </strong><%= @pattern.instructions %></p>
     <p><strong>Notes: </strong><%= @pattern.notes %></p>
+    
+    <%# how to show created by only if !current_user %>
     <p><strong>Created by: </strong><%= @pattern.user.username %></p>
