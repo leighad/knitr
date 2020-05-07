@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_05_233248) do
+ActiveRecord::Schema.define(version: 2020_05_07_033135) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "rating"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_233248) do
 
   create_table "patterns", force: :cascade do |t|
     t.string "pattern_name"
-    t.integer "gauge"
+    t.string "gauge"
     t.integer "level"
     t.text "instructions"
     t.string "notes"
