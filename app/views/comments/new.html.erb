@@ -1,15 +1,15 @@
 <h1>Create a Comment:</h1>
-
+<hr>
 <%= form_for([@pattern, @comment]) do |f| %>
 
-    <%= f.label :pattern_name %>
-    <%= f.collection_select :pattern_id, Pattern.all, :id, :pattern_name %><br>
+    <%= f.label :pattern_name %>:
+    <%= f.collection_select :pattern_id, Pattern.all, :id, :pattern_name %><br><br>
 
     <%= f.label :rating %>:&nbsp;
     <%= f.number_field :rating, :in => 1..5, :step => 1 %><br><br>
 
-    <%= f.lael :content %>
-    <%= f.text_area :content %>
+    <%= f.label :content %>:<br>
+    <%= f.text_area :content %><br><br>
 
     <%= f.submit "Submit Comment" %>
 <% end %>
