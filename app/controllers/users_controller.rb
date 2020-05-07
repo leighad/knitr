@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        redirect_if_not_logged_in
         set_user
         redirect_to '/' if !@user 
     end
