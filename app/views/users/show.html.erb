@@ -1,6 +1,7 @@
 <h1>Hello <%= @user.username.capitalize %>!</h1>
 <hr>
 
+<h3>Your Patterns:</h3>
 <% @user.patterns.each do |patt| %>
     <p><%= link_to patt.pattern_name.capitalize, pattern_path(patt) %></p>
 <% end %>
