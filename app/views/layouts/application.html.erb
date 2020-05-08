@@ -12,7 +12,7 @@
   <body>
     <div>
       <% if logged_in? %>
-        <%#= link_to "My Patterns", users_path(current_user) %>&nbsp;|&nbsp; 
+        <%= link_to "My Patterns", user_path(current_user) %>&nbsp;|&nbsp; 
         <%= link_to "Create Pattern", new_pattern_path %> &nbsp;|&nbsp;
         <%= link_to "View All Patterns", patterns_path %> &nbsp;|&nbsp;
         <%= link_to "View All Comments", comments_path %> &nbsp;|&nbsp;
