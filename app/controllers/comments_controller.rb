@@ -2,13 +2,15 @@ class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def new
-        @comment = Comment.new
+        if params[:pattern_id] && @pattern = Pattern.find_by_id(params[:pattern_id])
+            @comment = @post.comments.build(comment_params)
+        end
     end
 
     def create
         @comment = current_user.comments.build(comment_params)
         if @comment.save
-            redirect_to comments_pat
+            redirect_to comments_path
         else
             render :new 
         end
@@ -19,7 +21,11 @@ class CommentsController < ApplicationController
     end
 
     def index
-        @comments = Comment.all 
+        if params[:pattern_id] && @pattern = Pattern.find_by_id(params[:pattern_id])
+            @comments = @pattern.comments 
+        else
+            @comments = Comment.all 
+        end
     end
 
     def edit
@@ -37,7 +43,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit()
+        params.require(:comment).permit(:rating, :content, :pattern_id, :user_id)
     end
 
     def set_comment
