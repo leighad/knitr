@@ -24,8 +24,10 @@ class SessionsController < ApplicationController
     end
 
     def google_auth
-        @user = User.find_by(email: auth['info']['email']) do |user|
+        # byebug
+        @user = User.find_or_create_by(email: auth[:info][:email]) do |user|
             user.password = SecureRandom.hex(12)
+            user.username = auth[:info][:first_name]
         end
         if @user.save
             session[:user_id] = @user.id
@@ -33,6 +35,10 @@ class SessionsController < ApplicationController
         else
             redirect_to '/'
         end
+
+        #<OmniAuth::AuthHash::InfoHash email="cdversiontwo@gmail.com" email_verified=true 
+        #first_name="Leigha" image="https://lh3.googleusercontent.com/-qtqnPU-1J2M/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJPrFFOODXKPZZj9U9PM5jwf5rWNhg/photo.jpg" 
+        #last_name="De La Rosa" name="Leigha De La Rosa" unverified_email="cdversiontwo@gmail.com">
     end
 
     private
