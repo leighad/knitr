@@ -11,5 +11,7 @@
     <% end %>
     <hr>
 
-    <%= link_to "Make a Comment", new_pattern_comment_path(@pattern) %>
+    <%= link_to "Make a Comment", new_pattern_comment_path(@pattern) %>&nbsp;|&nbsp; 
+    <%= link_to "View Comments", pattern_comments_path(@pattern) %>
+
 
