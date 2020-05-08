@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
     def new
         if params[:pattern_id] && @pattern = Pattern.find_by_id(params[:pattern_id])
-            @comment = @post.comments.build(comment_params)
+            @comment = @pattern.comments.build
         end
     end
 
@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:rating, :content, :pattern_id, :user_id)
+        params.require(:comment).permit(:rating, :content, :pattern_id)
     end
 
     def set_comment
