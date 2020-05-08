@@ -1,0 +1,7 @@
+<h1>View Comments:</h1>
+<hr>
+<%# how to insert pattern_name into title %>
+
+<% @comments.each do |comment| %>
+    <p><strong><%= comment.user.username.capitalize %> says: </strong><%= comment.content %></p>
+<% end %>
