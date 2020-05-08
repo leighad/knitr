@@ -3,5 +3,5 @@
 <%# how to insert pattern_name into title %>
 
 <% @comments.each do |comment| %>
-    <p><strong><%= comment.user.username.capitalize %> says: </strong><%= comment.content %></p>
+    <p><strong><%= comment.user.username.capitalize %> says: </strong><%= comment.content %> about <%= link_to comment.pattern.pattern_name, pattern_path(comment.pattern) %></p>
 <% end %>
