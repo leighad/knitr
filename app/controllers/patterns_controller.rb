@@ -19,7 +19,12 @@ class PatternsController < ApplicationController
     end
 
     def index
-        @patterns = Pattern.all 
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @patterns = @user.patterns
+        else
+            # @error = "User doesn't exist" if params[:user_id]
+            @patterns = Pattern.all 
+        end
     end
 
     private
