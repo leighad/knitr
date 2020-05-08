@@ -1,9 +1,15 @@
-<h1>Create a Comment:</h1>
+<% if @pattern %>
+    <h1>Create a Comment for <%= @pattern.pattern_name %>:</h1>
+<% else %>
+    <h1>Create a Comment:</h1>
+<% end %>
 <hr>
 <%= form_for([@pattern, @comment]) do |f| %>
 
-    <%= f.label :pattern_name %>:
-    <%= f.collection_select :pattern_id, Pattern.all, :id, :pattern_name %><br><br>
+    <% if !@pattern %> 
+        <%= f.label :pattern_name %>:
+        <%= f.collection_select :pattern_id, Pattern.all, :id, :pattern_name %><br><br>
+    <% end %>
 
     <%= f.label :rating %>:&nbsp;
     <%= f.number_field :rating, :in => 1..5, :step => 1 %><br><br>
