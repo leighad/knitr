@@ -1,6 +1,7 @@
 <h1>Log In Here:</h1>
 
-<%= flash[:message] if flash[:message] %><hr>
+<p><%= flash[:error] %></p>
+<hr>
 
 <%= form_for :user do |f| %>
 
