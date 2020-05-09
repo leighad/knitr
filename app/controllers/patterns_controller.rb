@@ -6,9 +6,9 @@ class PatternsController < ApplicationController
     end
 
     def create
-        pattern = current_user.patterns.build(pattern_params)
-        if pattern.save
-            redirect_to pattern_path(pattern)
+        @pattern = current_user.patterns.build(pattern_params)
+        if @pattern.save
+            redirect_to pattern_path(@pattern)
         else
             render :new
         end
