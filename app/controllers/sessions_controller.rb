@@ -24,11 +24,7 @@ class SessionsController < ApplicationController
     end
 
     def google_auth
-        # byebug
-        @user = User.find_or_create_by(email: auth[:info][:email]) do |user|
-            user.password = SecureRandom.hex(12)
-            user.username = auth[:info][:first_name]
-        end
+        @user = User.find_or_create_by_google(auth)
         if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
