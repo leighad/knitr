@@ -7,7 +7,7 @@
 
 <% @comments.each do |comment| %>
     <% if params[:pattern_id] %>
-        <p><strong><%= comment.user.username.capitalize %> says</strong> <em><%= comment.content %></em> and rates this pattern a <strong><%= comment.rating %></strong></p>
+        <p><strong><%= comment.user.username.capitalize %></strong> rates this pattern a <strong><%= comment.rating %></strong> and says: <em><%= comment.content %></em></p>
     <% else %>
         <p><strong><%= comment.user.username.capitalize %></strong> gives <%= link_to comment.pattern.pattern_name, pattern_path(comment.pattern) %> a rating of <strong><%= comment.rating %> </strong> and says: <em><%= comment.content %></em></p>
     <% end %>
