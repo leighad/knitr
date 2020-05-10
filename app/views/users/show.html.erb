@@ -2,7 +2,7 @@
 <hr>
 
 <h3>Your Patterns:</h3>
-<% @user.patterns.each do |patt| %>
+<% @user.patterns.alpha.each do |patt| %>
     <p><%= link_to patt.pattern_name.capitalize, pattern_path(patt) %></p>
 <% end %>
 

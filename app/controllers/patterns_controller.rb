@@ -23,7 +23,7 @@ class PatternsController < ApplicationController
             @patterns = @user.patterns
         else
             # @error = "User doesn't exist" if params[:user_id]
-            @patterns = Pattern.all 
+            @patterns = Pattern.alpha 
         end
     end
 
