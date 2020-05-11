@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
     def new
         if params[:pattern_id] && @pattern = Pattern.find_by_id(params[:pattern_id])
             @comment = @pattern.comments.build
+        else 
+            #add error here
+            redirect_to comments_path
         end
     end
 
