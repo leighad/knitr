@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback', to: 'sessions#google_auth'
 
+  get '/patterns/popular' => 'patterns#top_ten'
+
   resources :comments
 
   resources :patterns do 
