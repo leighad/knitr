@@ -1,0 +1,6 @@
+<h1>Top Rated Patterns:</h1>
+<hr>
+<% @top_patterns.each do |comment| %>
+<p><%= link_to comment.pattern.pattern_name.capitalize, pattern_path(comment.pattern) %>
+    <p><%#= link_to patt.pattern_name.capitalize, pattern_path(patt) %></p>
+<% end %>
