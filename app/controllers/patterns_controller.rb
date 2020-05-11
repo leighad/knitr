@@ -27,6 +27,10 @@ class PatternsController < ApplicationController
         end
     end
 
+    def top_ten
+        @top_patterns = Comment.top_rated.alpha 
+    end
+
     private
 
     def pattern_params
