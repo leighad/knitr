@@ -1,4 +1,7 @@
 <h2>View comments for: <%= @comment.pattern.pattern_name.capitalize %></h2>
 <hr>
 
+<%= link_to "Make a Comment", new_comment_path(@comment.pattern) %>&nbsp; 
+<hr>
+
 <p><strong><%= @comment.user.username.capitalize %></strong> rates this pattern a <strong><%= @comment.rating %></strong> and says: <em><%= @comment.content %></em></p>
