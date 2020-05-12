@@ -5,6 +5,9 @@
 <% end %>
 <hr>
 
+<%= link_to "Make a Comment", new_pattern_comment_path(current_user) %>&nbsp; 
+<hr>
+
 <% @comments.each do |comment| %>
     <% if params[:pattern_id] %>
         <p><strong><%= comment.user.username.capitalize %></strong> rates this pattern a <strong><%= comment.rating %></strong> and says: <em><%= comment.content %></em></p>
