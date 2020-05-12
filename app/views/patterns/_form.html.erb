@@ -1,0 +1,12 @@
+
+<% if @pattern.errors.any? %>
+    <div id="error_explanation">
+        <h3><%= pluralize(@pattern.errors.count, "error") %> prohibited this pattern from being saved:</h3>
+
+        <ul>
+        <% @pattern.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
