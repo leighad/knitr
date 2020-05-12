@@ -12,16 +12,16 @@
   <body>
     <div>
       <% if logged_in? %>
-        <%= link_to "My Patterns", user_path(current_user) %>&nbsp;|&nbsp; 
-        <%= link_to "Create Pattern", new_pattern_path %> &nbsp;|&nbsp;
-        <%= link_to "View All Patterns", patterns_path %> &nbsp;|&nbsp;
-        <%= link_to "Top Rated Patterns", patterns_popular_path %> &nbsp;|&nbsp;
-        <%# <%= link_to "Create Comment", new_user_comment_path(current_user) %> &nbsp;|&nbsp; %>
-        <%= link_to "View All Comments", comments_path %> &nbsp;|&nbsp;
+        <%= link_to "My Patterns", user_path(current_user) %> &nbsp;|&nbsp; 
+        <%= link_to "Create Pattern", new_pattern_path %> &nbsp;|&nbsp;&nbsp;
+        <%= link_to "View All Patterns", patterns_path %> &nbsp;|&nbsp;&nbsp;
+        <%= link_to "Top Rated Patterns", patterns_popular_path %> &nbsp;|&nbsp;&nbsp;
+        <%= link_to "Create Comment", new_pattern_comment_path(current_user) %> &nbsp;|&nbsp;&nbsp;
+        <%= link_to "View All Comments", comments_path %> &nbsp;|&nbsp;&nbsp;
         <%= link_to "Log Out", logout_path, method: "delete" %>
       <% else %>
-        <%= link_to "Join knitr", signup_path %> &nbsp;|&nbsp;
-        <%= link_to "Log In", login_path %> &nbsp;|&nbsp;
+        <%= link_to "Join knitr", signup_path %> &nbsp;|&nbsp;&nbsp;
+        <%= link_to "Log In", login_path %> &nbsp;|&nbsp;&nbsp;
         <%= link_to "Google Signin", '/auth/google_oauth2' %>
       <% end %>
 
