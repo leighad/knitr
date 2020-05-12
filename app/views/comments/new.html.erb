@@ -5,6 +5,8 @@
 <% end %>
 <hr>
 
+<%= render 'form' %>
+
 <%= form_for([@comment.pattern, @comment]) do |f| %>
 
     <% if !@comment.pattern %> 
