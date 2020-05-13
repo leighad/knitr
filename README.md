@@ -78,7 +78,7 @@ Project is: _in progress_
 
 ## Inspiration
 Project inspired by my Mom. 
-Thanks to [@flynerdpl](https://www.flynerd.pl/) for help with this README.
+Thanks to [@flynerdpl](https://www.flynerd.pl/) and @akshaymohite for help with this README.
 
 ## Contact
 Created by Leigha- feel free to contact me!
