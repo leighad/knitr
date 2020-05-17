@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :patterns, only: [:new, :create, :index]
-    # resources :comments, shallow: true 
+    resources :comments, shallow: true 
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
