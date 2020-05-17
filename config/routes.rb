@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/patterns/popular' => 'patterns#top_ten'
 
-  resources :comments
+  # resources :comments
 
   resources :patterns do 
     resources :comments
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :patterns, only: [:new, :create, :index]
     resources :comments, shallow: true 
   end
+
+  resources :comments
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
