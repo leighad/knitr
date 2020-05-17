@@ -5,7 +5,7 @@
 <% end %>
 <hr>
 
-<%= link_to "Make a Comment", new_pattern_comment_path(current_user) %>&nbsp; 
+<%= link_to "Make a Comment", new_pattern_comment_path(@pattern) %>&nbsp; 
 <hr>
 
 <% @comments.each do |comment| %>
