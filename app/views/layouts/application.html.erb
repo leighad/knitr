@@ -16,7 +16,7 @@
         <%= link_to "Create Pattern", new_pattern_path %> &nbsp;|&nbsp;&nbsp;
         <%= link_to "View All Patterns", patterns_path %> &nbsp;|&nbsp;&nbsp;
         <%= link_to "Top Rated Patterns", patterns_popular_path %> &nbsp;|&nbsp;&nbsp;
-        <%= link_to "Create Comment", new_pattern_comment_path(current_user) %> &nbsp;|&nbsp;&nbsp;
+        <%= link_to "Create Comment", new_comment_path(current_user) %> &nbsp;|&nbsp;&nbsp;
         <%= link_to "View All Comments", comments_path %> &nbsp;|&nbsp;&nbsp;
         <%= link_to "Log Out", logout_path, method: "delete" %>
       <% else %>
