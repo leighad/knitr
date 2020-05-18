@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :patterns, only: [:new, :create, :index]
-    resources :comments, shallow: true 
+    resources :comments 
   end
 
   resources :comments
