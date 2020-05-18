@@ -2,20 +2,20 @@ class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def new
-        if params[:pattern_id] && @pattern = Pattern.find_by_id(params[:pattern_id])
+        if @pattern = Pattern.find_by_id(params[:pattern_id])
             @comment = @pattern.comments.build
-        else 
-            #add error here
-            redirect_to comments_path
+        else
+            @comment = Comment.new
         end
     end
 
     def create
         @comment = current_user.comments.build(comment_params)
         if @comment.save
+            # redirect_to comments_path
             redirect_to comment_path(@comment)
         else
-            render :new 
+            render :new
         end
     end
 
@@ -24,8 +24,8 @@ class CommentsController < ApplicationController
     end
 
     def index
-        if params[:pattern_id] && @pattern = Pattern.find_by_id(params[:pattern_id])
-            @comments = @pattern.comments 
+        if @pattern = Pattern.find_by_id(params[:pattern_id])
+            @comments = @pattern.comments
         else
             @comments = Comment.all 
         end
