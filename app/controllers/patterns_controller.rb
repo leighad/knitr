@@ -28,7 +28,7 @@ class PatternsController < ApplicationController
     end
 
     def top_ten
-        @top_patterns = Comment.top_rated.alpha 
+        @top_patterns = Comment.top_rated.limit(10) 
     end
 
     private
