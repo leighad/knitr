@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :patterns, only: [:new, :create, :index]
+    resources :patterns
     resources :comments 
   end
 
