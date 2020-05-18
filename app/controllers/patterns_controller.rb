@@ -18,6 +18,19 @@ class PatternsController < ApplicationController
         set_pattern
     end
 
+    def edit
+        set_pattern
+    end
+
+    def update
+        set_pattern
+        if @pattern.update(pattern_params)
+            redirect_to pattern_path(@pattern)
+        else
+            render :edit 
+        end
+    end
+
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @patterns = @user.patterns
