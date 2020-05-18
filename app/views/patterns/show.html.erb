@@ -10,6 +10,9 @@
         <p><strong>Created by: </strong><%= @pattern.user.username %></p>
     <% end %>
     <hr>
+    <%= link_to "Edit Pattern", edit_pattern_path(@pattern) %>&nbsp;|&nbsp;
+    <%#= link_to "Delete Pattern", edit_pattern_path(@pattern) %>
+    <hr>
 
     <%= link_to "Make a Comment", new_pattern_comment_path(@pattern) %>&nbsp;|&nbsp; 
     <%= link_to "View Comments", pattern_comments_path(@pattern) %>
