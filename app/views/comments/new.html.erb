@@ -6,21 +6,3 @@
 <hr>
 
 <%= render 'form' %>
-
-<%= form_for([@comment.pattern, @comment]) do |f| %>
-
-    <% if !@comment.pattern %> 
-        <%= f.label :pattern_name %>:
-        <%= f.collection_select :pattern_id, Pattern.all, :id, :pattern_name %><br><br>
-    <% else %>
-        <%= f.hidden_field :pattern_id %>
-    <% end %>
-
-    <%= f.label :rating %>:&nbsp;
-    <%= f.number_field :rating, :in => 1..5, :step => 1 %><br><br>
-
-    <%= f.label :content %>:<br>
-    <%= f.text_area :content %><br><br>
-
-    <%= f.submit "Submit Comment" %>
-<% end %>
