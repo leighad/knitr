@@ -10,8 +10,10 @@
         <p><strong>Created by: </strong><%= @pattern.user.username %></p>
     <% end %>
     <hr>
-    <%= link_to "Edit Pattern", edit_pattern_path(@pattern) %>&nbsp;|&nbsp;
-    <%#= link_to "Delete Pattern", edit_pattern_path(@pattern) %>
+    <% if current_user.id == @pattern.user_id %>
+        <%= link_to "Edit Pattern", edit_pattern_path(@pattern) %>&nbsp;|&nbsp;
+        <%#= link_to "Delete Pattern", edit_pattern_path(@pattern) %>
+    <% end %>
     <hr>
 
     <%= link_to "Make a Comment", new_pattern_comment_path(@pattern) %>&nbsp;|&nbsp; 
