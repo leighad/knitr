@@ -1,4 +1,9 @@
-<h1>View All Patterns:</h1>
+<% if params[:user_id] %>
+    <h1>View patterns by: <%= @user.username %></h1>
+<% else %>
+    <h1>View All Patterns:</h1>
+<% end %>
+
 <hr>
 <% @patterns.each do |patt| %>
     <p><%= link_to patt.pattern_name.capitalize, pattern_path(patt) %></p>
