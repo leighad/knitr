@@ -1,5 +1,7 @@
 <% if params[:pattern_id] %>
     <h1>View Comments for <%= @pattern.pattern_name.capitalize %>:</h1>
+    <hr>
+    <%= link_to "Create Comment", new_pattern_comment_path(@pattern) %>
 <% else %>
     <h1>View Comments:</h1>
 <% end %>
