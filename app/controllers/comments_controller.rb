@@ -44,6 +44,10 @@ class CommentsController < ApplicationController
         end
     end
 
+    def most_recent
+        @new_comments = Comment.most_recent.limit(10) 
+    end
+
     def destroy
 
     end
