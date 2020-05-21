@@ -1,0 +1,5 @@
+<h1>Recent Comments:</h1>
+<hr>
+<% @new_comments.each do |comment| %>
+    <p><strong><%= comment.user.username.capitalize %></strong> rates <%= link_to comment.pattern.pattern_name.capitalize %> a <strong><%= comment.rating %></strong> and says: <em><%= comment.content %></em></p>
+<% end %>
