@@ -3,7 +3,7 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
+<!-- * [Screenshots](#screenshots) -->
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
@@ -12,15 +12,15 @@
 * [Contact](#contact)
 
 ## General info
-This is my first Rails project and it was created as part of the Flatiron School curriculum. The purpose of this project is to showcase what I have learned so far and to continue building and improving this idea. 
-
+This is my first Rails project and it was created as part of the Flatiron School curriculum. The purpose of this project is to showcase what I have learned so far and to continue building upon and improving this idea. 
+<!-- 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./img/screenshot.png) Coming Soon! -->
 
 ## Technologies
 * Github
-* Ruby [2.4.0](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
-* Rails [5.0.2](https://github.com/organization/project-name/blob/master/Gemfile#L12)
+* Ruby [2.6.5](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
+* Rails [6.0.2](https://github.com/organization/project-name/blob/master/Gemfile#L12)
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
@@ -28,7 +28,7 @@ Describe how to install / setup your local environement / add link to demo versi
 ##### 1. Check out the repository
 
 ```bash
-git clone git@github.com:organization/project-name.git
+git clone https://github.com/leighad/knitr.git
 ```
 
 ##### 2. Create database.yml file
@@ -58,9 +58,9 @@ bundle exec rails s
 
 And now you can visit the site with the URL http://localhost:3000
 
-## Code Examples
+<!-- ## Code Examples
 Show examples of usage:
-`put-your-code-here`
+`put-your-code-here` -->
 
 ## Features
 List of features ready and TODOs for future development
