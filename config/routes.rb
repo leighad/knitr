@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/patterns/popular' => 'patterns#top_ten'
 
-  # resources :comments
+  get '/comments/recent' => 'comments#most_recent'
 
   resources :patterns do 
     resources :comments
