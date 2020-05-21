@@ -15,7 +15,7 @@
 
     <% if !@comment.pattern %> 
         <%= f.label :pattern_name %>:
-        <%= f.collection_select :pattern_id, Pattern.all, :id, :pattern_name %><br><br>
+        <%= f.collection_select :pattern_id, Pattern.alpha, :id, :pattern_name %><br><br>
     <% else %>
         <%= f.hidden_field :pattern_id %>
     <% end %>
