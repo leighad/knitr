@@ -4,6 +4,8 @@ class Comment < ApplicationRecord
 
   scope :alpha, -> { order (:pattern_name) }
   scope :top_rated, -> { where ("(rating) = 5") }
+  # scope :most_recent, -> { order ("created_at desc") }
+  # stretch goal
 
   validates :rating, presence: true
   validates :content, presence: true, length: { maximum: 80 }
