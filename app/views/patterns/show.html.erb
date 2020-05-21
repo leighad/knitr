@@ -10,16 +10,20 @@
         <p><strong>Created by: </strong><%= link_to @pattern.user.username, user_patterns_path(@pattern.user) %></p>
     <% end %>
     <hr>
-    
-<%# note the duplicate if current_user.id %>
-
-    <% if current_user.id == @pattern.user_id %>
-        <%= link_to "Edit Pattern", edit_pattern_path(@pattern) %>&nbsp;|&nbsp;
-        <%#= link_to "Delete Pattern", edit_pattern_path(@pattern) %>
-    <% end %>
-    <hr>
 
     <%= link_to "Make a Comment", new_pattern_comment_path(@pattern) %>&nbsp;|&nbsp; 
     <%= link_to "View Comments", pattern_comments_path(@pattern) %>
+    <hr>
+
+    <% if current_user.id == @pattern.user_id %>
+        <%= link_to "Edit Pattern", edit_pattern_path(@pattern) %>&nbsp;
+        <br>
+        <%# <br> %>
+        <%#= link_to "Delete Pattern", edit_pattern_path(@pattern) %>
+        <%#= form_for @pattern, method: :delete do |f| %>
+            <%#= f.submit "Destroy this pattern" %>
+        <%# end %>
+    <% end %>
+    <hr>
 
 
