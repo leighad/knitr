@@ -1,7 +1,14 @@
-<h2>View comments for: <%= @comment.pattern.pattern_name.capitalize %></h2>
+<h2>View your comment for: <%= @comment.pattern.pattern_name.capitalize %></h2>
 <hr>
 
-<%= link_to "Make a Comment", new_comment_path(@comment.pattern) %>&nbsp; 
+<%= link_to "Edit Comment", edit_comment_path(@comment) %>&nbsp;|&nbsp;
+<%=  link_to "View Comments", pattern_comments_path(@comment.pattern) %>
+<%#= link_to "Destroy Comment", comment_path(@comment) %>&nbsp; 
 <hr>
 
 <p><strong><%= @comment.user.username.capitalize %></strong> rates this pattern a <strong><%= @comment.rating %></strong> and says: <em><%= @comment.content %></em></p>
+<hr>
+
+<%#= form_for @comment, method: :delete do |f| %>
+    <%#= f.submit "Delete Comment" %>
+<%# end %>
