@@ -15,7 +15,7 @@
     <%= f.label :pattern_name %>:&nbsp;
     <%= f.text_field :pattern_name %><br><br>
 
-    Difficulty <%= f.label :level %>:&nbsp;
+    <%= f.label 'Difficulty Level: ' %>&nbsp;
     <%= f.number_field :level, :in => 1..5, :step => 1 %><br><br>
 
     <%= f.label :gauge %>:&nbsp;
